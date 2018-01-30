@@ -29,9 +29,9 @@ const Ingredients=props=>{
     }
 
     return(
-        <Aux>
+        <span>
         {ingredient}
-        </Aux>
+        </span>
 )
 }
 

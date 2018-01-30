@@ -2,19 +2,20 @@ import React, { Component } from 'react'
 import Aux from '../Components/Aux'
 import Panel from '../Components/Panel'
 import Burger from '../Components/Burger'
-import Header    from '../Components/Header'
+
 
 class Builder extends Component{
 
     state={
         ingredients:{
-            cheese:{quant:2,up:5},
-            tomato:{quant:2,up:5},
-            pickle:{quant:2,up:5},
-            meatball:{quant:2,up:5},
-            patty:{quant:2,up:5},
-            onion:{quant:2,up:5}
-    }
+            cheese:3,
+            tomato:1,
+            pickle:3,
+            meatball:3,
+            patty:2,
+            onion:2
+    },
+    totalPrice:null
 }
 
 
@@ -22,11 +23,9 @@ render(){
 
     return(
         <Aux>
-            <Header />
          <h1>The Best Burger</h1>
          <h2>Only $9.99</h2>
-
-        <Burger />
+        <Burger ingredients={this.state.ingredients}/>
         <Panel />
         </Aux>
     )

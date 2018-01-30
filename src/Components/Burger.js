@@ -7,15 +7,20 @@ import Aux from './Aux'
 
 
 const Burger=props=>{
-   
+    let ingredients=[]
+    if(props.ingredients){
+    Object.keys(props.ingredients).map(key=> {
+        if(+props.ingredients[key] !==0){ 
+        for (let i=1;i<=+props.ingredients[key];i++){
+        ingredients.push(<Ingredients type={key}/>)
+                }
+            }
+        })
+    }
         return(
             <Aux classes="burger">
             <Bread>
-                <Ingredients type="cheese"/>
-                <Ingredients type="cheese"/>
-                <Ingredients type="cheese"/>
-                <Ingredients type="patty"/>
-                <Ingredients type=""/>
+                {ingredients}
             </Bread>
             <Plate/>
             </Aux>
